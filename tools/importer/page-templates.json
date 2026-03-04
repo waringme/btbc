@@ -1,0 +1,38 @@
+{
+  "templates": [
+    {
+      "name": "integrated-supply-chain-welcome",
+      "urls": [
+        "https://documents.bt.com/content/integrated-supply-chain/"
+      ],
+      "description": "BT Integrated Supply Chain welcome/landing page built with Foleon. Features a hero section with background image and CTA, a two-column intro section, and content cards linking to chapter pages.",
+      "blocks": [
+        {
+          "name": "hero",
+          "instances": [
+            "section:has(.viewer-background):has(h1)"
+          ]
+        },
+        {
+          "name": "columns",
+          "instances": [
+            "section#intro"
+          ]
+        },
+        {
+          "name": "section-contents",
+          "section": "contents",
+          "instances": [
+            "section:has(h2):not(:has(.ripley__Image--container)):not(:has(.viewer-background))"
+          ]
+        },
+        {
+          "name": "cards",
+          "instances": [
+            "section:has(.ripley__Image--container):has(.im-button)"
+          ]
+        }
+      ]
+    }
+  ]
+}
