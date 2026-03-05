@@ -33,6 +33,12 @@
   height: 100%;
 }
 
+.hero p {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .hero p a:any-link {
   display: inline-flex;
   align-items: center;
