@@ -343,7 +343,7 @@ main .section.purple a:hover {
   color: #ffa6ff;
 }
 
-/* Cards within purple section: stacked list, images alternate sides of line */
+/* Cards within purple section: stacked list with staggered rows */
 main .section.purple .cards > ul {
   grid-template-columns: 1fr;
   gap: 48px;
@@ -351,28 +351,29 @@ main .section.purple .cards > ul {
   padding-left: 0;
 }
 
-/* Continuous pink line running full height of cards list, centered */
+/* Continuous pink line running full height of cards list */
 main .section.purple .cards > ul::before {
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 50%;
+  left: 192px;
   width: 3px;
   background-color: #ff80ff;
-  transform: translateX(-50%);
 }
 
 main .section.purple .cards > ul > li {
   border: none;
   background-color: transparent;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
   gap: 24px;
   position: relative;
 }
 
 main .section.purple .cards .cards-card-image {
+  flex: 0 0 180px;
   max-width: 180px;
 }
 
@@ -386,27 +387,12 @@ main .section.purple .cards > ul > li img {
 main .section.purple .cards .cards-card-body {
   flex: 1;
   margin: 0;
-}
-
-/* Odd cards: image left, text right (default order) */
-main .section.purple .cards > ul > li:nth-child(odd) .cards-card-image {
-  justify-self: end;
-}
-
-main .section.purple .cards > ul > li:nth-child(odd) .cards-card-body {
   padding-left: 24px;
 }
 
-/* Even cards: flip — image right, text left */
-main .section.purple .cards > ul > li:nth-child(even) .cards-card-image {
-  order: 2;
-  justify-self: start;
-}
-
-main .section.purple .cards > ul > li:nth-child(even) .cards-card-body {
-  order: 1;
-  text-align: right;
-  padding-right: 24px;
+/* Stagger: even cards offset to the right */
+main .section.purple .cards > ul > li:nth-child(even) {
+  margin-left: 15%;
 }
 
 main .section.purple .cards .cards-card-body p > strong {
@@ -435,17 +421,18 @@ main .section.purple .cards .cards-card-body a:hover {
   color: #fff;
 }
 
-/* Mobile: stack cards vertically, remove alternation */
+/* Mobile: stack cards vertically, remove stagger */
 @media (width < 600px) {
   main .section.purple .cards > ul::before {
     display: none;
   }
 
   main .section.purple .cards > ul > li {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 
   main .section.purple .cards .cards-card-image {
+    flex: 0 0 auto;
     max-width: 100%;
   }
 
@@ -454,21 +441,11 @@ main .section.purple .cards .cards-card-body a:hover {
     aspect-ratio: 16 / 9;
   }
 
-  main .section.purple .cards > ul > li:nth-child(even) .cards-card-image {
-    order: 0;
-  }
-
-  main .section.purple .cards > ul > li:nth-child(even) .cards-card-body {
-    order: 0;
-    text-align: left;
-    padding-right: 0;
-  }
-
-  main .section.purple .cards > ul > li:nth-child(odd) .cards-card-image {
-    justify-self: start;
-  }
-
-  main .section.purple .cards > ul > li:nth-child(odd) .cards-card-body {
+  main .section.purple .cards .cards-card-body {
     padding-left: 0;
+  }
+
+  main .section.purple .cards > ul > li:nth-child(even) {
+    margin-left: 0;
   }
 }
