@@ -390,9 +390,9 @@ main .section.purple .cards .cards-card-body {
   padding-left: 24px;
 }
 
-/* Stagger: even cards offset to the right */
+/* Stagger: even cards offset to the right, past the pink line */
 main .section.purple .cards > ul > li:nth-child(even) {
-  margin-left: 15%;
+  margin-left: 220px;
 }
 
 main .section.purple .cards .cards-card-body p > strong {
