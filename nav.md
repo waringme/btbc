@@ -1,4 +1,4 @@
-[BT Business](/)
+[![BT Logo](./icons/bt-logo.png)](/) BT Business
 
 ---
 
