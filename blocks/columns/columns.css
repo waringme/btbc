@@ -25,6 +25,10 @@
   display: block;
 }
 
+.columns h1 {
+  color: #5514b4;
+}
+
 @media (width >= 600px) {
   .columns > div {
     padding-left: 60px;
@@ -34,7 +38,7 @@
 
 @media (width >= 900px) {
   .columns > div {
-    align-items: center;
+    align-items: flex-start;
     flex-direction: unset;
     gap: 24px;
     padding-left: 100px;
