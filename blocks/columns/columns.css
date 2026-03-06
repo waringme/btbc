@@ -1,6 +1,12 @@
+/* Match source (documents.bt.com) content block: constrained width and horizontal padding */
 .columns > div {
   display: flex;
   flex-direction: column;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .columns img {
@@ -19,11 +25,20 @@
   display: block;
 }
 
+@media (width >= 600px) {
+  .columns > div {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
 @media (width >= 900px) {
   .columns > div {
     align-items: center;
     flex-direction: unset;
     gap: 24px;
+    padding-left: 100px;
+    padding-right: 100px;
   }
 
   .columns > div > div {

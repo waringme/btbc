@@ -335,6 +335,17 @@ main .section.purple h2 {
   color: #fff;
 }
 
+/* Columns block "The power of an interconnected supply chain": match source (documents.bt.com) – dark heading on light background */
+main .section.purple .columns {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 50px 0;
+}
+
+main .section.purple .columns h1 {
+  color: #5514b4;
+}
+
 main .section.purple a:any-link {
   color: #ff80ff;
 }
